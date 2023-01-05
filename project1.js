@@ -33,11 +33,24 @@ function saveinLocalStorage(event){
 
 
  window.addEventListener('DOMContentLoaded', (event) => { 
-     Object.keys(localStorage).forEach(key => {
-        const user = JSON.parse(localStorage.getItem(key))
+    axios.get(" https://crudcrud.com/api/49efc82b0e5644908d91615fb6292b23/ExpenseData")
+    // interview question 
+    // const data = axios.get("https://crudcrud.com/api/49efc82b0e5644908d91615fb6292b23/ExpenseData  ")
+       .then((response) =>{
+        console.log(response)
+        for(var i=0; i< response.data.length; i++){
+            displayUser(response.data[i])
+        }
+       })
+       .catch((error)=>{
+         console.log(error)
+       })
+       // console.log(data)(javascript waits for none it will give Promise but not a data )(concept of event loop )
+   //  Object.keys(localStorage).forEach(key => {
+       // const user = JSON.parse(localStorage.getItem(key))
        // addNewLineElement(user)
-       displayUser(user);
-    })
+      // displayUser(user);
+    //})
 });    
 
 
@@ -76,3 +89,20 @@ function displayUser(user){
 
    deleteUser(discription);
  }
+
+
+
+// DOMCONTENTLOADED(Why do we need it)
+// the main use of this is that when once HTML is loaded on screen then script will run 
+
+
+
+
+
+
+
+
+
+
+
+
