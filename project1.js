@@ -99,11 +99,11 @@ function displayUser(user){
 
 
 
- function edituser(userId,discription , expense){
-  document.getElementById('id1').value = discription;
-  document.getElementById('id0').value = expense;
+ function edituser(userId,expense,discription){
+  document.getElementById('id1').value = discription
+  document.getElementById('id0').value = expense
 
-   deleteUser(userId);
+   deleteUser(userId)
  }
 
 
